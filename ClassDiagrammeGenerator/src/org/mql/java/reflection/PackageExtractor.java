@@ -52,7 +52,6 @@ public class PackageExtractor {
 				}
 			}
 		}
-		
 		return s;
 	}
 	public Vector<String> getPackages() {

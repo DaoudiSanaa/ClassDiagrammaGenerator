@@ -3,6 +3,7 @@ package org.mql.java.ui;
 import javax.swing.JFrame;
 
 public class FormDiagramme extends JFrame {
+	
 	private static final long serialVersionUID = 1L;
 	
 	private Form form;
