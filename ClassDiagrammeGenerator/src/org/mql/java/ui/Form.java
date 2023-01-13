@@ -15,6 +15,7 @@ public class Form extends JPanel {
 		this(title, 120);
 	}
 	
+	
 	public Form(String title, int labelWidth) {
 		container = new JPanel();
 		container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
