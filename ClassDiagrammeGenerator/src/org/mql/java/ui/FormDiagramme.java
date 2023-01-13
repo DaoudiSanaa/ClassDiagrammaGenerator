@@ -8,7 +8,7 @@ public class FormDiagramme extends JFrame {
 	private Form form;
 
 	public FormDiagramme() {
-		exp03();
+		exp01();
 		setContentPane(form);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		pack();
@@ -17,7 +17,7 @@ public class FormDiagramme extends JFrame {
 	}
 	
 
-	private void exp03() 
+	private void exp01() 
 	{
 		
 		
