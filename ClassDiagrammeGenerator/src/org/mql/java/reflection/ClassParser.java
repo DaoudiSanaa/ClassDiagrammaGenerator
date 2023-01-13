@@ -25,16 +25,16 @@ public class ClassParser {
 		return cl.getSimpleName();
 	}
 
-	public List<org.mql.java.models.Method> getAllConstructor() {
+	public List<org.mql.java.models.MethodModel> getAllConstructor() {
 		int index = 0;
 		Constructor<?> c[] = cl.getDeclaredConstructors();
-		List<org.mql.java.models.Method> ml = new Vector<>();
+		List<org.mql.java.models.MethodModel> ml = new Vector<>();
 		for (Constructor<?> constructor : c) {
-			ml.add(new org.mql.java.models.Method(Modifier.toString(constructor.getModifiers()), cl.getSimpleName()));
+			ml.add(new org.mql.java.models.MethodModel(Modifier.toString(constructor.getModifiers()), cl.getSimpleName()));
 			Parameter p[] = constructor.getParameters();
-			List<org.mql.java.models.Field> prl = new Vector<>();
+			List<org.mql.java.models.FieldModel> prl = new Vector<>();
 			for (Parameter parameter : p) {
-				prl.add(new org.mql.java.models.Field(parameter.getName(), parameter.getType().getSimpleName()));
+				prl.add(new org.mql.java.models.FieldModel(parameter.getName(), parameter.getType().getSimpleName()));
 			}
 			ml.get(index).setParameters(prl);
 			index++;
@@ -42,17 +42,17 @@ public class ClassParser {
 		return ml;
 	}
 
-	public List<org.mql.java.models.Method> getMethods() {
+	public List<org.mql.java.models.MethodModel> getMethods() {
 		int index = 0;
 		Method m1[] = cl.getDeclaredMethods();
-		List<org.mql.java.models.Method> ml = new Vector<>();
+		List<org.mql.java.models.MethodModel> ml = new Vector<>();
 		for (Method method : m1) {
-			ml.add(new org.mql.java.models.Method(Modifier.toString(method.getModifiers()),
+			ml.add(new org.mql.java.models.MethodModel(Modifier.toString(method.getModifiers()),
 					method.getReturnType().getSimpleName(), method.getName()));
 			Parameter pm[] = method.getParameters();
-			List<org.mql.java.models.Field> mtl = new Vector<>();
+			List<org.mql.java.models.FieldModel> mtl = new Vector<>();
 			for (Parameter parameter : pm) {
-				mtl.add(new org.mql.java.models.Field(parameter.getName(), parameter.getType().getSimpleName()));
+				mtl.add(new org.mql.java.models.FieldModel(parameter.getName(), parameter.getType().getSimpleName()));
 			}
 			ml.get(index).setParameters(mtl);
 			index++;
@@ -60,11 +60,11 @@ public class ClassParser {
 		return ml;
 	}
 
-	public List<org.mql.java.models.Field> getFields() {
+	public List<org.mql.java.models.FieldModel> getFields() {
 		Field field[] = cl.getDeclaredFields();
-		List<org.mql.java.models.Field> fl = new Vector<>();
+		List<org.mql.java.models.FieldModel> fl = new Vector<>();
 		for (Field field2 : field) {
-			fl.add(new org.mql.java.models.Field(Modifier.toString(field2.getModifiers()), field2.getName(),
+			fl.add(new org.mql.java.models.FieldModel(Modifier.toString(field2.getModifiers()), field2.getName(),
 					field2.getType().getSimpleName()));
 		}
 		return fl;
@@ -106,7 +106,7 @@ public class ClassParser {
 		newClass.setConstructors(getAllConstructor());
 		newClass.setMethods(getMethods());
 		newClass.setInternClass(getInternClass());
-		/*System.out.print(newClass.getVisibility());
+	/*	System.out.print(newClass.getVisibility());
 		System.out.print(" class ");
 		System.out.print(cl.getSimpleName());
 		System.out.print(getSuperclass());
@@ -160,9 +160,9 @@ public class ClassParser {
 		System.out.println("}");*/
 
 	}
-
+/*
 	public static void main(String[] args) {
 
-		new ClassParser("org.mql.java.models.Method");
-	}
+		new ClassParser("org.mql.java.models.MethodModel");
+	}*/
 }

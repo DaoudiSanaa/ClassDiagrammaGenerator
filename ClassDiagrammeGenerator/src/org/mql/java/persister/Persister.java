@@ -3,14 +3,12 @@ package org.mql.java.persister;
 
 
 import org.mql.java.models.ClassModel;
-import org.mql.java.models.Field;
+import org.mql.java.models.FieldModel;
 import org.mql.java.reflection.ClassParser;
 
 public class Persister {
 
 	private ClassModel classe;
-	
-	
 	
 	public Persister(ClassModel classe) {
 		this.classe = classe;
@@ -27,7 +25,7 @@ public class Persister {
 		
 		for (java.lang.reflect.Field field : fields) {
 			
-			if(field.getType().getName().equals("java.lang.String")) 
+			if(!field.getType().getName().equals("java.lang.String")) 
 			{
 				try {
 					field.setAccessible(true);
@@ -48,13 +46,17 @@ public class Persister {
 				}
 				xmlValue +="\n</properties>";
 			}
+		
+			
+		
 		}
 		
 		return xmlValue+"\n</class>";
 	}
 	
-	private String propertyToXml(Field property)
+	private String propertyToXml(FieldModel property)
 	{
+		
 		String xmlValue = "";
 		
 		java.lang.reflect.Field [] fields = property.getClass().getDeclaredFields();

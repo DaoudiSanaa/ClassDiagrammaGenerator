@@ -20,10 +20,10 @@ public class PackageExplorer {
 		File directory = new File(classPath + "/" + packagepath);
 		System.out.println(directory.isDirectory());
 		s = getClassList(directory);
-		for (String string : s) {
+	/*	for (String string : s) {
 			System.out.println(string);
-		}
-
+		}  
+		*/                                              
 	}
 
 	public String[] getClassList(File directory) {
@@ -47,6 +47,9 @@ public class PackageExplorer {
 		v.toArray(t);
 		return t;
 
+	}
+	public String[] getclasses() {
+		return s;
 	}
 
 	public static void main(String[] args) {

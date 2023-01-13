@@ -26,8 +26,8 @@ public class ClassParserFrame  extends JFrame {
 	private void exp01() 
 	{
 		form = new ClassPanel(" Le squelette d'une classe : ",400);
-		form.add(400,new ClassParser("org.mql.java.models.Class"));
-		form.addinfo(400,new ClassParser("org.mql.java.models.Class"));
+		form.add(400,new ClassParser("org.mql.java.models.ClassModel"));
+		form.addinfo(400,new ClassParser("org.mql.java.models.ClassModel"));
 		
 	}
 	public static void main(String[] args) {

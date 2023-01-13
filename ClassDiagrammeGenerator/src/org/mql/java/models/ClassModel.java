@@ -6,11 +6,11 @@ public class ClassModel {
 	
 	private String visibility;
 	private String name;
-	private List<Field> fields;
+	private List<FieldModel> fields;
 	private String superclass;
 	private List<String> interfaces;
-	private List<Method> constructors;
-	private List<Method> methods;
+	private List<MethodModel> constructors;
+	private List<MethodModel> methods;
 	private List<String> internClass;
 	
 	public ClassModel(String visibility, String name) {
@@ -19,8 +19,8 @@ public class ClassModel {
 		this.name = name;
 	}
 
-	public ClassModel(String visibility, String name, List<Field> fields, String superclass, List<String> interfaces,
-			List<Method> constructors, List<Method> methods) {
+	public ClassModel(String visibility, String name, List<FieldModel> fields, String superclass, List<String> interfaces,
+			List<MethodModel> constructors, List<MethodModel> methods) {
 		super();
 		this.visibility = visibility;
 		this.name = name;
@@ -58,11 +58,11 @@ public class ClassModel {
 		this.name = name;
 	}
 
-	public List<Field> getFields() {
+	public List<FieldModel> getFields() {
 		return fields;
 	}
 
-	public void setFields(List<Field> fields) {
+	public void setFields(List<FieldModel> fields) {
 		this.fields = fields;
 	}
 
@@ -82,19 +82,19 @@ public class ClassModel {
 		this.interfaces = interfaces;
 	}
 
-	public List<Method> getConstructors() {
+	public List<MethodModel> getConstructors() {
 		return constructors;
 	}
 
-	public void setConstructors(List<Method> constructors) {
+	public void setConstructors(List<MethodModel> constructors) {
 		this.constructors = constructors;
 	}
 
-	public List<Method> getMethods() {
+	public List<MethodModel> getMethods() {
 		return methods;
 	}
 
-	public void setMethods(List<Method> methods) {
+	public void setMethods(List<MethodModel> methods) {
 		this.methods = methods;
 	}
 

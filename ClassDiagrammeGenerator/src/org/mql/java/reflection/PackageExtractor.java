@@ -15,40 +15,47 @@ public class PackageExtractor {
 
 	public static void main(String[] args) {
 
-		new PackageExtractor("DaoudiSanaa");
+		new PackageExtractor("ClassDiagrammeGenerator ");
+
 	}
 
 	public PackageExtractor(String projectName) {
 		String classPath = System.getProperty("java.class.path");
 		System.out.println(classPath);
 		File directory = new File(classPath);
-		System.out.println(directory.isDirectory());
 
 		getPackege(directory);
-
+/*
 		for (int i = 0; i < s.size(); i++) {
 			System.out.println(s.get(i));
-		}
+		}*/
 	}
 
 	public Vector<String> getPackege(File directory) {
-		File[] files = directory.listFiles();
-		// System.out.println(directory.getAbsolutePath());
-		for (File file : files) {
-System.out.println(file.getName());
-			cnt = pack;
-			if (!file.isFile() && !file.listFiles()[0].isDirectory()) {
+
+		if (directory.isDirectory()) {
+			File[] files = directory.listFiles();
+			for (File file : files) {
 				
-				cnt += file.getName();
-				s.add(cnt);
-			} else {
-				pack += file.getName() + ".";
-				getPackege(file);
+			 
 				
+				
+					cnt = pack;
+				if (!file.isFile() && !file.listFiles()[file.listFiles().length-1].isDirectory()) {
+
+					cnt += file.getName();
+					cnt=cnt.substring(11,cnt.length());
+					s.add(cnt);
+				} else {
+					pack += file.getName() + ".";
+					getPackege(file);
+				}
 			}
 		}
-	//	System.out.println(s);
+		
 		return s;
 	}
-
+	public Vector<String> getPackages() {
+		return s;
+	}
 }

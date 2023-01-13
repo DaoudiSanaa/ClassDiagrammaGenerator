@@ -1,15 +1,15 @@
 package org.mql.java.models;
 
-public class Field {
+public class FieldModel {
 	
 	private String visibility;
 	private String name;
 	private String type;
 	
-	public Field() {
+	public FieldModel() {
 		// TODO Auto-generated constructor stub
 	}
-	public Field(String visibility, String name , String type) {
+	public FieldModel(String visibility, String name , String type) {
 		super();
 		this.visibility = visibility;
 		this.name = name;
@@ -17,7 +17,7 @@ public class Field {
 		
 	}
 	
-	public Field(String name, String type) {
+	public FieldModel(String name, String type) {
 		super();
 		this.name = name;
 		this.type = type;

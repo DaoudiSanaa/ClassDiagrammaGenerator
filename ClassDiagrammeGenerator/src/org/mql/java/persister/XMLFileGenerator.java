@@ -7,18 +7,18 @@ import java.io.IOException;
 public class XMLFileGenerator {
 
 	public XMLFileGenerator(String fileName) {
-		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter("resources/"+fileName+".xml"));
-			String o = "<element></element>";
-			out.write(o);
-			out.append(o); // out.write(o.toString())
-			out.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	try {
+		FileWriter fw= new FileWriter(fileName);
+		fw.write("<hii></hii>");
+		fw.close();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
 	}
 	
 	public static void main(String[] args) {
-		new XMLFileGenerator("file");
+		new XMLFileGenerator("resources/file.xml");
 	}
 }
