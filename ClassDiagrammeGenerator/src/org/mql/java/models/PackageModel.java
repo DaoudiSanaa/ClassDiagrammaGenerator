@@ -3,21 +3,21 @@ package org.mql.java.models;
 import java.util.Vector;
 
 public class PackageModel {
-private String name;
+private String namePackage;
 private Vector<ClassModel> classModels;
 
  public PackageModel(String name, Vector<ClassModel> classModels) {
 	super();
-	this.name = name;
+	this.namePackage = name;
 	this.classModels = classModels;
 }
 
 public String getName() {
-	return name;
+	return namePackage;
 }
 
 public void setName(String name) {
-	this.name = name;
+	this.namePackage = name;
 }
 
 public Vector<ClassModel> getClassModels() {

@@ -3,10 +3,13 @@ package org.mql.java.reflection;
 import java.io.File;
 import java.util.Vector;
 
+import org.mql.java.models.PackageModel;
+
 public class PackageExplorer {
 	private String[] s;
 	private String packageName;
 	private String packagepath;
+	private PackageModel newmodel;
 	Vector<String> v = new Vector<String>();
 
 	public PackageExplorer(String packageName) {
@@ -20,9 +23,7 @@ public class PackageExplorer {
 		File directory = new File(classPath + "/" + packagepath);
 		System.out.println(directory.isDirectory());
 		s = getClassList(directory);
-		/*
-		 * for (String string : s) { System.out.println(string); }
-		 */
+
 	}
 
 	public String[] getClassList(File directory) {
@@ -52,7 +53,4 @@ public class PackageExplorer {
 		return s;
 	}
 
-	public static void main(String[] args) {
-		new PackageExplorer("org.mql.java.app");
-	}
 }

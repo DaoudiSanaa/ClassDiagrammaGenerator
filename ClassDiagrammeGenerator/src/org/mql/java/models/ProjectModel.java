@@ -3,7 +3,7 @@ package org.mql.java.models;
 import java.util.Vector;
 
 public class ProjectModel {
-private String name;
+private String nameProject;
 private Vector<PackageModel> packages;
 
 	public ProjectModel() {
@@ -12,16 +12,16 @@ private Vector<PackageModel> packages;
 	
 	public ProjectModel(String name, Vector<PackageModel> packages) {
 		super();
-		this.name = name;
+		this.nameProject = name;
 		this.packages = packages;
 	}
 	
 	public String getName() {
-		return name;
+		return nameProject;
 	}
 	
 	public void setName(String name) {
-		this.name = name;
+		this.nameProject = name;
 	}
 	
 	public Vector<PackageModel> getPackages() {

@@ -7,9 +7,9 @@ import javax.swing.JPanel;
 
 import org.mql.java.reflection.ClassParser;
 
-public class ClassParserFrame  extends JFrame {
+public class ClassParserFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
-	
+
 	private ClassPanel form;
 
 	public ClassParserFrame() {
@@ -20,21 +20,16 @@ public class ClassParserFrame  extends JFrame {
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
-	
 
+	private void exp01() {
+		form = new ClassPanel(" Le squelette d'une classe : ", 400);
+		form.add(400, new ClassParser("org.mql.java.models.ClassModel"));
+		form.addinfo(400, new ClassParser("org.mql.java.models.ClassModel"));
 
-	private void exp01() 
-	{
-		form = new ClassPanel(" Le squelette d'une classe : ",400);
-		form.add(400,new ClassParser("org.mql.java.models.ClassModel"));
-		form.addinfo(400,new ClassParser("org.mql.java.models.ClassModel"));
-		
 	}
+
 	public static void main(String[] args) {
 		new ClassParserFrame();
 	}
-
-
-	
 
 }

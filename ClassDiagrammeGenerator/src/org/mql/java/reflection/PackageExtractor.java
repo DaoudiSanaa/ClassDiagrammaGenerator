@@ -13,22 +13,13 @@ public class PackageExtractor {
 	private Vector<String> s = new Vector<String>();
 	private String cnt;
 
-	public static void main(String[] args) {
-
-		new PackageExtractor("ClassDiagrammeGenerator ");
-
-	}
-
 	public PackageExtractor(String projectName) {
 		String classPath = System.getProperty("java.class.path");
 		System.out.println(classPath);
 		File directory = new File(classPath);
 
 		getPackege(directory);
-/*
-		for (int i = 0; i < s.size(); i++) {
-			System.out.println(s.get(i));
-		}*/
+
 	}
 
 	public Vector<String> getPackege(File directory) {
@@ -36,15 +27,12 @@ public class PackageExtractor {
 		if (directory.isDirectory()) {
 			File[] files = directory.listFiles();
 			for (File file : files) {
-				
-			 
-				
-				
-					cnt = pack;
-				if (!file.isFile() && !file.listFiles()[file.listFiles().length-1].isDirectory()) {
+
+				cnt = pack;
+				if (!file.isFile() && !file.listFiles()[file.listFiles().length - 1].isDirectory()) {
 
 					cnt += file.getName();
-					cnt=cnt.substring(11,cnt.length());
+					cnt = cnt.substring(11, cnt.length());
 					s.add(cnt);
 				} else {
 					pack += file.getName() + ".";
@@ -54,6 +42,7 @@ public class PackageExtractor {
 		}
 		return s;
 	}
+
 	public Vector<String> getPackages() {
 		return s;
 	}

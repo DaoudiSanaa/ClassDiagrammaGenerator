@@ -4,8 +4,8 @@ import java.util.List;
 
 public class ClassModel {
 	
-	private String visibility;
-	private String name;
+	private String visibilityClass;
+	private String nameClass;
 	private List<FieldModel> fields;
 	private String superclass;
 	private List<String> interfaces;
@@ -13,17 +13,19 @@ public class ClassModel {
 	private List<MethodModel> methods;
 	private List<String> internClass;
 	
+
+	
 	public ClassModel(String visibility, String name) {
 		super();
-		this.visibility = visibility;
-		this.name = name;
+		this.visibilityClass = visibility;
+		this.nameClass = name;
 	}
 
 	public ClassModel(String visibility, String name, List<FieldModel> fields, String superclass, List<String> interfaces,
 			List<MethodModel> constructors, List<MethodModel> methods) {
 		super();
-		this.visibility = visibility;
-		this.name = name;
+		this.visibilityClass = visibility;
+		this.nameClass = name;
 		this.fields = fields;
 		this.superclass = superclass;
 		this.interfaces = interfaces;
@@ -43,19 +45,19 @@ public class ClassModel {
 	}
 
 	public String getVisibility() {
-		return visibility;
+		return visibilityClass;
 	}
 
 	public void setVisibility(String visibility) {
-		this.visibility = visibility;
+		this.visibilityClass = visibility;
 	}
 
 	public String getName() {
-		return name;
+		return nameClass;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.nameClass = name;
 	}
 
 	public List<FieldModel> getFields() {

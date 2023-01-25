@@ -11,13 +11,13 @@ public class Examples {
 
 	public void exp01() {
 		PackageExtractor proj = new PackageExtractor("ClassDiagrammeGenerator");
-		Vector<String> s=proj.getPackages();
+		Vector<String> s = proj.getPackages();
 		for (String string : s) {
 			PackageExplorer pack = new PackageExplorer(string);
 			String[] m = pack.getclasses();
 			for (String string2 : m) {
 				ClassParser cl = new ClassParser(string2);
-				
+
 				cl.getSquelette();
 			}
 		}
